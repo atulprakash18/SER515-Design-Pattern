@@ -31,12 +31,12 @@ public class Facade {
         } else {
             theTradingMenu = new SellerTradingMenu();
         }
-        Trading theTrading = new Trading();
+        Trade theTrading = new Trade();
         theTradingMenu.showMenu(theTrading, thePerson);
         thePerson.addTrading(theTrading);
     }
 
-    void viewTrading(Trading theTrading) {
+    void viewTrading(Trade theTrading) {
         TradingMenu theTradingMenu;
         if (thePerson.type == 0)
         {
@@ -47,35 +47,29 @@ public class Facade {
         theTradingMenu.showMenu(theTrading, thePerson);
     }
 
-    // functions for InstructorTradingMenu
-    /*
-     * this function will grade the give Solution: theSolution this function calls
-     */
-
-    void viewOffering(Offer theOffer) {
-        OfferMenu offerMenu = new OfferMenu();
+    void markOffering(Offering theOffer) {
+        OfferingMenu offerMenu = new OfferingMenu();
         offerMenu.showMenu(theOffer);
     }
 
-    void markOffering(Trading theTrading) {
-        Offer theOffer;
-        OfferIterator theOfferIterator;
-        theOfferIterator = theTrading.getOfferIterator();
-        theOffer = (Offer) theOfferIterator.next();
+    void viewOffering(Trade theTrading) {
+        Offering theOffer;
+        OfferingIterator theOfferIterator;
+        theOfferIterator = theTrading.getOfferingIterator();
+        theOffer = (Offering) theOfferIterator.next();
         while (theOffer != null) {
             theOffer.setReported(true);
-            theOffer = (Offer) theOfferIterator.next();
+            theOffer = (Offering) theOfferIterator.next();
         }
     }
 
-    // functions for StudentTradingMenu
-    void submitOffering(Trading theTrading, Offer theOffer) {
-        theTrading.addOffer(theOffer);
+    void submitOffering(Trade theTrading, Offering theOffer) {
+        theTrading.addOffering(theOffer);
     }
 
     void remind() {
         Reminder theReminder = new Reminder();
-        theReminder.showReminder(thePerson.getTradeList());
+        theReminder.showReminder(thePerson.getProductList());
     }
 
     void createUser(UserInfoItem userinfoitem) {

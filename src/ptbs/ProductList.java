@@ -1,16 +1,14 @@
 package ptbs;
 
-package hacs;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ClassProductList{
+public class ProductList{
 
     private static final long serialVersionUID = 1L;
 
-    public ClassProductList() {
+    public ProductList() {
         System.out.println("Product list implemented");
     }
 

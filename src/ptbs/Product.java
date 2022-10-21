@@ -20,7 +20,7 @@ public class Product {
         this.numberOfTrade = 0;
     }
 
-//    public int getproductCategory() {
+//    public int getProductCategory() {
 //        return productCategory;
 //    }
 
