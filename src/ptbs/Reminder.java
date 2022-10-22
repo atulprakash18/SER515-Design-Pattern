@@ -6,10 +6,11 @@ import javax.swing.JLabel;
 import java.awt.Button;
 import java.awt.Rectangle;
 
-public class Reminder {
+
+public class Reminder extends JDialog {
 
     private static final long serialVersionUID = 1L;
-    ProductList courseList;
+    ProductList productList;
     JLabel jLabel1 = new JLabel();
     JLabel jLabel2 = new JLabel();
     java.awt.List listUpcoming = new java.awt.List();
@@ -50,7 +51,7 @@ public class Reminder {
 
     void showReminder(ProductList productList) {
         ReminderVisitor visitor = new ReminderVisitor(this);
-        visitor.visitFacade(Hacs.theFacade);
+        visitor.visitFacade(PTBS.theFacade);
         setVisible(true);
     }
 

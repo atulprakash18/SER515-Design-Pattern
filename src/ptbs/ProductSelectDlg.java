@@ -42,13 +42,13 @@ public class ProductSelectDlg extends JDialog {
     private void jbInit() throws Exception {
         this.getContentPane().setLayout(null);
         productNameComboBox.setBounds(new Rectangle(155, 41, 203, 22));
-        highLevelRadio.setText("HighLevel");
+        highLevelRadio.setText("Type 1");
         highLevelRadio.setBounds(new Rectangle(50, 87, 103, 26));
         lowLevelRadio.setToolTipText("");
         lowLevelRadio.setSelected(true);
-        lowLevelRadio.setText("LowLevel");
+        lowLevelRadio.setText("Type 2");
         lowLevelRadio.setBounds(new Rectangle(236, 88, 103, 26));
-        jLabel1.setText("CourseName");
+        jLabel1.setText("ProductName");
         jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
         okButton.setText("OK");
         okButton.setBounds(new Rectangle(78, 139, 79, 29));
@@ -74,8 +74,8 @@ public class ProductSelectDlg extends JDialog {
         buttonGroup1.add(lowLevelRadio);
     }
 
-    public Product showDlg(ProductList courseList) {
-        theProductList = courseList;
+    public Product showDlg(ProductList productList) {
+        theProductList = productList;
         ProductIterator theIterator = new ProductIterator(theProductList);
         Product theProduct;
         while ((theProduct = (Product) theIterator.next()) != null) /// end of the list
@@ -89,9 +89,9 @@ public class ProductSelectDlg extends JDialog {
     void okButtonActionPerformed(ActionEvent e) {
         selectedProduct = (Product) productNameComboBox.getSelectedItem();
         if (highLevelRadio.isSelected())
-            nProductCategory = 0; // highlevel course: 0
+            nProductCategory = 0;
         else
-            nProductCategory = 1; // lowlevel course: 1
+            nProductCategory = 1;
         setVisible(false);
     }
 

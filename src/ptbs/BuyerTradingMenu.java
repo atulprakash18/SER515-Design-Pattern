@@ -12,12 +12,12 @@ public class BuyerTradingMenu extends TradingMenu {
 
 
     private static final long serialVersionUID = 1L;
-    // class AssignmentMenu
+    // class to display Menu
     private boolean boolSubmit = false;
     private Offering theOffering;
     private Trade theTrade;
 
-    JLabel lAssignmentName = new JLabel();
+    JLabel lTradeName = new JLabel();
     JLabel lDueDate = new JLabel();
     JTextField tbSolution = new JTextField();
     JLabel lSuggestedSolution = new JLabel();
@@ -25,11 +25,13 @@ public class BuyerTradingMenu extends TradingMenu {
     JButton bSubmit = new JButton();
     JButton bCancel = new JButton();
 
+    JLabel jLabel6 = new JLabel();
+    JLabel jLabel7 = new JLabel();
+
     JLabel jLabel1 = new JLabel();
     JLabel jLabel3 = new JLabel();
     JLabel jLabel5 = new JLabel();
-    JLabel jLabel6 = new JLabel();
-    JLabel jLabel7 = new JLabel();
+
 
     public BuyerTradingMenu() {
         try {
@@ -40,22 +42,22 @@ public class BuyerTradingMenu extends TradingMenu {
     }
 
     private void jbInit() throws Exception {
-        jLabel1.setText("Assignment : ");
+        jLabel1.setText("Trade : ");
         jLabel1.setBounds(new Rectangle(20, 36, 91, 18));
         this.getContentPane().setLayout(null);
-        lAssignmentName.setText("jLabel2");
-        lAssignmentName.setBounds(new Rectangle(258, 35, 282, 18));
+        lTradeName.setText("jLabel2");
+        lTradeName.setBounds(new Rectangle(258, 35, 282, 18));
         jLabel3.setText("Due Date");
         jLabel3.setBounds(new Rectangle(21, 81, 92, 18));
         lDueDate.setText("jLabel4");
         lDueDate.setBounds(new Rectangle(254, 82, 294, 18));
-        jLabel5.setText("Solution");
+        jLabel5.setText("Offering");
         jLabel5.setBounds(new Rectangle(24, 128, 93, 18));
         tbSolution.setText("jTextField1");
         tbSolution.setBounds(new Rectangle(251, 127, 211, 22));
-        jLabel6.setText("Suggested Solution");
+        jLabel6.setText("Suggested Offering");
         jLabel6.setBounds(new Rectangle(24, 174, 117, 18));
-        jLabel7.setText("Grade");
+        jLabel7.setText("Mark");
         jLabel7.setBounds(new Rectangle(23, 224, 41, 18));
         lSuggestedSolution.setText("jLabel8");
         lSuggestedSolution.setBounds(new Rectangle(259, 169, 201, 18));
@@ -79,7 +81,7 @@ public class BuyerTradingMenu extends TradingMenu {
         this.getContentPane().add(jLabel3, null);
         this.getContentPane().add(jLabel5, null);
         this.getContentPane().add(jLabel6, null);
-        this.getContentPane().add(lAssignmentName, null);
+        this.getContentPane().add(lTradeName, null);
         this.getContentPane().add(lDueDate, null);
         this.getContentPane().add(tbSolution, null);
         this.getContentPane().add(jLabel7, null);
@@ -105,7 +107,7 @@ public class BuyerTradingMenu extends TradingMenu {
             lGrade.setText(theOffering.getMarkString());
         }
 
-        lAssignmentName.setText(theTrade.tradeName);
+        lTradeName.setText(theTrade.tradeName);
         lDueDate.setText(theTrade.dueDate.toString());
         lSuggestedSolution.setText(theTrade.suggestOffering.offeringFileName);
 

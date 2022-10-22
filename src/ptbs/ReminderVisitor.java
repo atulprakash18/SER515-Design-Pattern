@@ -23,20 +23,20 @@ public class ReminderVisitor extends NodeVisitor {
     public void visitFacade(Facade facade) {
         ProductIterator productList = new ProductIterator(facade.theProductList);
         while (productList.hasNext()) {
-            Product course = (Product) productList.next();
-            course.accept(this);
+            Product product = (Product) productList.next();
+            product.accept(this);
         }
     }
 
     public void visitProduct(Product product) {
         Iterator<Trade> tradeList = product.tradeList.listIterator();
         while (tradeList.hasNext()) {
-            Trade assignment = (Trade) tradeList.next();
-            assignment.accept(this);
+            Trade trade = (Trade) tradeList.next();
+            trade.accept(this);
         }
     }
 
-    public void visitAssignment(Trade trade) {
+    public void visitTrade(Trade trade) {
         Date today = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(today);

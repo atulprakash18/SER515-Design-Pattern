@@ -7,21 +7,26 @@ public class Buyer extends Person {
     }
 
     public ProductMenu createProductMenu(Product theProduct, int theLevel) {
+
+        // create Products function
         if (theLevel == 0)
         {
-            theProductMenu = new HighLevelCourseMenu();
+            theProductMenu = new HighLevelProductMenu();
         } else // 1: LowLevel
         {
-            theProductMenu = new LowLevelCourseMenu();
+            theProductMenu = new LowLevelProductMenu();
         }
         return theProductMenu;
     }
 
     @Override
     public boolean showMenu() {
+        //show menu
         super.showMenu();
         showViewButtons();
         showComboxes();
+
+        //show Radios
         showRadios();
         show();
         return ifLogout();

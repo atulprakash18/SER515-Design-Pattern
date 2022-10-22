@@ -8,12 +8,12 @@ public class Seller extends Person {
     public ProductMenu createProductMenu(Product theProduct, int theLevel) {
         if (theLevel == 0)
         {
-            theProduct = new HighLevelProductMenu();
+            theProductMenu = new HighLevelProductMenu();
         } else // 1: LowLevel
         {
-            theProduct = new LowLevelProductMenu();
+            theProductMenu = new LowLevelProductMenu();
         }
-        return theProduct;
+        return theProductMenu;
     }
 
     public boolean showMenu() {

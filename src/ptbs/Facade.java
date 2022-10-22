@@ -23,7 +23,7 @@ public class Facade {
         return login.isExit();
     }
 
-    void addTrading(Person thePerson) {
+    void addTrading(Product theProduct) {
         TradingMenu theTradingMenu;
         if (thePerson.type == 0)// student
         {
@@ -33,7 +33,7 @@ public class Facade {
         }
         Trade theTrading = new Trade();
         theTradingMenu.showMenu(theTrading, thePerson);
-        thePerson.addTrading(theTrading);
+        theProduct.addTrading(theTrading);
     }
 
     void viewTrading(Trade theTrading) {
@@ -76,7 +76,7 @@ public class Facade {
         if (userinfoitem.userType == UserInfoItem.USER_TYPE.Buyer) // student
         {
             thePerson = new Buyer();
-        } else // instructor
+        } else
         {
             thePerson = new Seller();
         }
@@ -92,7 +92,7 @@ public class Facade {
         return theProductList;
     }
 
-    void AttachProductToUser() {
+    void attachProductToUser() {
         BufferedReader file;
         try {
             file = new BufferedReader(new FileReader(System.getProperty("user.dir") + "//UserProduct.txt"));
@@ -126,11 +126,11 @@ public class Facade {
         return aline.substring(Sep + 1, aline.length());
     }
 
-    public boolean SelectProduct() {
+    public boolean selectProduct() {
         ProductSelectDlg theDlg = new ProductSelectDlg();
         theSelectProduct = theDlg.showDlg(thePerson.productList);
         thePerson.currentProduct = theSelectProduct;
-        nProuctCategory = theDlg.nProuctCategory;
+        nProductCategory = theDlg.nProductCategory;
         return theDlg.isLogout();
     }
 

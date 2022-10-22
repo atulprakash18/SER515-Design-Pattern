@@ -5,12 +5,6 @@ import java.awt.Rectangle;
 
 public class HighLevelProductMenu extends ProductMenu {
 
-    /*
-     * JButton AssignmentAddButton = new JButton(); JRadioButton OptionRadio = new
-     * JRadioButton(); JComboBox OptionCombo = new JComboBox(); JButton
-     * OptionViewButton = new JButton(); JButton OptionAddButton = new JButton();
-     */
-
     private static final long serialVersionUID = 1L;
 
     public HighLevelProductMenu() {
@@ -39,7 +33,7 @@ public class HighLevelProductMenu extends ProductMenu {
     }
 
     void showRadios() {
-        tradeRadio.setText("Assignment");
+        tradeRadio.setText("Trade");
         tradeRadio.setBounds(new Rectangle(21, 55, 103, 26));
         this.getContentPane().add(tradeRadio, null);
         optionRadio.setText("HighLevel Presentation");
@@ -60,7 +54,7 @@ public class HighLevelProductMenu extends ProductMenu {
         tradeViewButton.setBounds(new Rectangle(290, 54, 79, 29));
         tradeViewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                assignmentViewButtonActionPerformed(e);
+                tradeViewButtonActionPerformed(e);
             }
         });
         optionViewButton.setText("View");
@@ -70,7 +64,7 @@ public class HighLevelProductMenu extends ProductMenu {
     }
 
     void showLabel() {
-        tradeContentLable.setText("AssignmentContent");
+        tradeContentLable.setText("TradeContent");
         tradeContentLable.setBounds(new Rectangle(23, 186, 432, 99));
         this.getContentPane().add(tradeContentLable, null);
     }

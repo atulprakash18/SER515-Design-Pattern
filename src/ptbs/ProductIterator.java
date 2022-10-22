@@ -7,14 +7,14 @@ public class ProductIterator implements Iterator<Object> {
     int currentProductNumber = -1;
 
     public ProductIterator() {
-        System.out.println("Course Iterator Implemeted");
+        System.out.println("Iterator Implemeted");
     }
 
     public ProductIterator(ProductList productList) {
         theProductList = productList;
     }
 
-    public ProductList getTheCourseList() {
+    public ProductList getTheProductList() {
         return theProductList;
     }
 
@@ -38,7 +38,6 @@ public class ProductIterator implements Iterator<Object> {
         theProductList.remove(currentProductNumber);
     }
 
-    // the next Course that fits the given CourseName
     public Object next(String ProductName) {
         Product theProduct;
         theProduct = (Product) next();

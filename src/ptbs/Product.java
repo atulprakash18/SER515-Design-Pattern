@@ -24,7 +24,7 @@ public class Product {
 //        return productCategory;
 //    }
 
-    public void addAssignment(Trade newTrade) {
+    public void addTrading(Trade newTrade) {
         tradeList.add(newTrade);
     }
 

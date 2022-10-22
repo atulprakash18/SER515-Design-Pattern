@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 
 import ptbs.UserInfoItem.USER_TYPE;
 
-public class Login {
+public class Login extends JDialog{
 
     private static final long serialVersionUID = 1L;
     boolean mBExit = false;
@@ -44,6 +44,7 @@ public class Login {
     }
 
     private void jbInit() throws Exception {
+        System.out.println("creating login window");
         this.getContentPane().setLayout(null);
         jLabel1.setText("UserName");
         jLabel1.setBounds(new Rectangle(26, 52, 80, 18));
@@ -66,9 +67,9 @@ public class Login {
         userNameText.setBounds(new Rectangle(119, 52, 144, 22));
         passwordText.setBounds(new Rectangle(118, 119, 147, 22));
         buyerRadio.setSelected(true);
-        buyerRadio.setText("Student");
+        buyerRadio.setText("Buyer");
         buyerRadio.setBounds(new Rectangle(37, 164, 103, 26));
-        sellerRadio.setText("Instructor");
+        sellerRadio.setText("Seller");
         sellerRadio.setBounds(new Rectangle(177, 162, 103, 26));
         this.getContentPane().add(jLabel1, null);
         this.getContentPane().add(jLabel2, null);
@@ -85,7 +86,7 @@ public class Login {
     void loginButtonActionPerformed(ActionEvent e) {
         BufferedReader file;
         mBExit = false;
-        System.out.println("login clicked");
+        System.out.println("User Logged In");
         try {
             if (buyerRadio.isSelected() == true)//// student
             {

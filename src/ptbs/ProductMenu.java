@@ -10,7 +10,7 @@ import javax.swing.JComboBox;
 import java.util.Iterator;
 
 
-public class ProductMenu {
+public abstract class ProductMenu extends JDialog{
 
     private static final long serialVersionUID = 1L;
     Product theProduct;
@@ -25,7 +25,7 @@ public class ProductMenu {
     JComboBox<Object> optionCombo = new JComboBox<Object>();
     JButton optionViewButton = new JButton();
     JButton optionAddButton = new JButton();
-    JButton buttonChangeCourse = new JButton();
+    JButton buttonChangeProduct = new JButton();
     JButton buttonLogout = new JButton();
 
     public ProductMenu() {
@@ -39,11 +39,11 @@ public class ProductMenu {
     }
 
     private void jbInit() throws Exception {
-        buttonChangeCourse.setText("ChangeCourse");
-        buttonChangeCourse.setBounds(new Rectangle(101, 211, 73, 37));
-        buttonChangeCourse.addActionListener(new java.awt.event.ActionListener() {
+        buttonChangeProduct.setText("ChangeProduct");
+        buttonChangeProduct.setBounds(new Rectangle(101, 211, 73, 37));
+        buttonChangeProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                buttonChangeCourseActionPerformed(e);
+                buttonChangeProductActionPerformed(e);
             }
         });
         this.getContentPane().setLayout(null);
@@ -55,7 +55,7 @@ public class ProductMenu {
                 buttonLogoutActionPerformed(e);
             }
         });
-        this.getContentPane().add(buttonChangeCourse, null);
+        this.getContentPane().add(buttonChangeProduct, null);
         this.getContentPane().add(buttonLogout, null);
     }
 
@@ -71,25 +71,25 @@ public class ProductMenu {
 
     abstract void showLabel();
 
-    void productAddButtonActionPerformed(ActionEvent e) {
-        PTBS.theFacade.addTrade(theTrade);
+    void tradeAddButtonActionPerformed(ActionEvent e) {
+        PTBS.theFacade.addTrading(theProduct);
         refresh();
     }
 
-    void assignmentViewButtonActionPerformed(ActionEvent e) {
+    void tradeViewButtonActionPerformed(ActionEvent e) {
         Trade theTra = (Trade) tradeCombox.getSelectedItem();
-        PTBS.theFacade.viewTrade(theTra);
+        PTBS.theFacade.viewTrading(theTra);
     }
 
     void refresh() {
         tradeCombox.removeAllItems();
-        Iterator<?> Iter = theTrade.assignmentList.iterator();
+        Iterator<?> Iter = theProduct.tradeList.iterator();
         while (Iter.hasNext()) {
             tradeCombox.addItem(Iter.next());
         }
     }
 
-    void buttonChangeCourseActionPerformed(ActionEvent e) {
+    void buttonChangeProductActionPerformed(ActionEvent e) {
         bLogout = false;
         setVisible(false);
     }

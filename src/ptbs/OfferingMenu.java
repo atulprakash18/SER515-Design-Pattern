@@ -1,10 +1,12 @@
 package ptbs;
 
-public class OfferingMenu extends Offering {
+import javax.swing.JDialog;
+
+public class OfferingMenu extends JDialog {
 
     private static final long serialVersionUID = 1L;
 
-    public OfferMenu() {
+    public OfferingMenu() {
         System.out.println("offering  Menu Implemented.");
     }
 

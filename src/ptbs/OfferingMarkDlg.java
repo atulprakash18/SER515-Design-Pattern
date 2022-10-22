@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 
 
-public class OfferingMarkDlg {
+public class OfferingMarkDlg extends JDialog{
 
     private static final long serialVersionUID = 1L;
     Offering theOffering;
@@ -48,13 +48,13 @@ public class OfferingMarkDlg {
 
     void show(Offering offering) {
         theOffering = offering;
-        tfGrad.setText("" + theOffering.getGradeInt());
+        tfGrad.setText("" + theOffering.getMarkInt());
         labelSolutionFileName.setText(theOffering.offeringFileName);
         setVisible(true);
     }
 
     void buttonOkActionPerformed(ActionEvent e) {
-        theOffering.theGrade = Integer.parseInt(tfGrad.getText());
+        theOffering.theMark = Integer.parseInt(tfGrad.getText());
         setVisible(false);
     }
 

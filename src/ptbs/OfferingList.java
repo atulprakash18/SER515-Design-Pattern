@@ -1,6 +1,7 @@
 package ptbs;
+import java.util.ArrayList;
 
-public class OfferingList {
+public class OfferingList extends ArrayList<Offering>{
 
     private static final long serialVersionUID = 1L;
 

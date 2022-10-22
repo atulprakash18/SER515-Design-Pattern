@@ -1,6 +1,6 @@
 package ptbs;
 
-public class NodeVisitor {
+abstract public class NodeVisitor {
 
     public NodeVisitor() {
         System.out.println("Node Visitor Implemented");

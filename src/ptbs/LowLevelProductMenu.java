@@ -8,7 +8,7 @@ public class LowLevelProductMenu extends ProductMenu {
     private static final long serialVersionUID = 1L;
 
     public LowLevelProductMenu() {
-        System.out.println("Lower level course menu implemented");
+        System.out.println("Lower level menu implemented");
     }
 
     void showMenu(Product theProduct) {
@@ -30,7 +30,7 @@ public class LowLevelProductMenu extends ProductMenu {
     }
 
     void showRadios() {
-        tradeRadio.setText("Assignment");
+        tradeRadio.setText("Trade");
         tradeRadio.setBounds(new Rectangle(21, 55, 103, 26));
         this.getContentPane().add(tradeRadio, null);
         optionRadio.setText("LowLevelExperiment");

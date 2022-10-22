@@ -1,8 +1,9 @@
 package ptbs;
 
-public class Person {
+import java.util.Iterator;
+abstract public class Person {
 
-    int type = 0; // type=0 : student, type=1 instructor
+    int type = 0;
     String userName;
     ProductList productList;
     ProductMenu theProductMenu;
@@ -39,16 +40,14 @@ public class Person {
         return theProductMenu.ifLogout();
     }
 
-    // show the assignment list
+
     public boolean showMenu() {
-        // create a iterator for the assignment list
-        // Iterator theIter=new ListIterator(CurrentCourse.AssList );
         Iterator<?> theIter = currentProduct.tradeList.iterator();
         theProductMenu.theProduct = currentProduct;
-        Assignment theAssignment;
+        Trade theTrade;
         while (theIter.hasNext()) {
-            theAssignment = (Trade) theIter.next();
-            theProductMenu.tradeCombox.addItem(theAssignment);
+            theTrade = (Trade) theIter.next();
+            theProductMenu.tradeCombox.addItem(theTrade);
         }
         return false;
     }

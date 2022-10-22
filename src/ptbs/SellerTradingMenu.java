@@ -17,7 +17,7 @@ public class SellerTradingMenu extends TradingMenu {
     private static final long serialVersionUID = 1L;
     private Offering theOffering;
     private Trade theTrade;
-    JComboBox<Offering> comboBoxSolutionList = new JComboBox<Offering>();
+    JComboBox<Offering> comboBoxOfferingList = new JComboBox<Offering>();
 
     JTextField tbTradeName = new JTextField();
     JTextField tbDueDate = new JTextField();
@@ -26,8 +26,8 @@ public class SellerTradingMenu extends TradingMenu {
     JLabel jLabel1 = new JLabel();
     JLabel jLabel2 = new JLabel();
     JLabel jLabel3 = new JLabel();
-    JButton buttonMark = new JButton();
-    JButton buttonView = new JButton();
+    JButton buttonGrade = new JButton();
+    JButton buttonReport = new JButton();
     JButton buttonClose = new JButton();
 
     public SellerTradingMenu() {
@@ -56,7 +56,7 @@ public class SellerTradingMenu extends TradingMenu {
         buttonGrade.setBounds(new Rectangle(458, 199, 79, 29));
         buttonGrade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                buttonMarkActionPerformed(e);
+                buttonGradeActionPerformed(e);
             }
         });
         buttonReport.setText("Report");
@@ -73,7 +73,7 @@ public class SellerTradingMenu extends TradingMenu {
                 buttonCloseActionPerformed(e);
             }
         });
-        comboBoxSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
+        comboBoxOfferingList.setBounds(new Rectangle(32, 204, 413, 22));
         this.getContentPane().add(jLabel1, null);
         this.getContentPane().add(tbTradeName, null);
         this.getContentPane().add(jLabel2, null);
@@ -81,7 +81,7 @@ public class SellerTradingMenu extends TradingMenu {
         this.getContentPane().add(jLabel3, null);
         this.getContentPane().add(tbSuggestedOffering, null);
         this.getContentPane().add(buttonClose, null);
-        this.getContentPane().add(comboBoxSolutionList, null);
+        this.getContentPane().add(comboBoxOfferingList, null);
         this.getContentPane().add(buttonGrade, null);
         this.getContentPane().add(buttonReport, null);
     }
